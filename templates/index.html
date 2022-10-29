@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Facial Recognition Service  </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='lodash.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='immutable.js') }}"></script>
+   <script type="text/javascript" src="{{ url_for('static', filename='axios.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='app.js') }}"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+<!--    <script language="Javascript" type="text/javascript" src="static/lodash.js"></script>-->
+<!--    <script language="Javascript" type="text/javascript" src="\immutable.js"></script>-->
+<!--    <script language="Javascript" type="text/javascript" src="D:\I am beside u\face-recognition-service-master\static\axios.js"></script>-->
+<!--    <script language="Javascript" type="text/javascript" src="D:\I am beside u\face-recognition-service-master\static\jquery.js"></script>-->
+<!--    <script language="Javascript" type="text/javascript" src="D:\I am beside u\face-recognition-service-master\static\app.js"></script>-->
+
+
+<!--    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />-->
+
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='app.css') }}" />-->
+<!--      <link rel="stylesheet" href="app.css" />-->
+
+<!--&lt;!&ndash;    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">&ndash;&gt;-->
+<style>
+body {
+  background-color: AliceBlue;
+
+}
+</style>
+<style>
+body {
+  background-image: url("/static/bg_image.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</head>
+<body class="body_class" >
+
+
+</div>
+<div class="container">
+    <h1 style="font-size:35px;">Facial Recognition</h1>
+
+    <ul class="tabs">
+        <li data-section="train-content" style="font-size:16px;">Train it</li>
+        <li data-section="recognize-content" style="font-size:16px;">Recognize</li>
+    </ul>
+    <div id="train-content">
+        <h2 style="font-size:20px;" >Train it</h2>
+        <form method="post" action="/api/train" id="train" enctype="multipart/form-data" >
+            <div class="message">
+
+            </div>
+            <p class="description" style="font-size:16px;">Upload an image contain the face and give it full name to
+                recognize it later</p>
+            <div class="form-item">
+                <label for="input-file">Face image</label>
+                <input type="file" name="file" id="input-file" accept="image/*"/>
+            </div>
+            <div class="form-item">
+                <label>Full name</label>
+                <input id="name-field" name="name" value="" type="text" placeholder="Full name"/>
+            </div>
+            <div class="form-action">
+                <button type="submit">Begin train it</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="recognize-content">
+        <h2 style="font-size:20px;">Recognize</h2>
+
+        <form method="post" action="/api/recognize" id="recognize" enctype="multipart/form-data">
+            <div class="message">
+
+            </div>
+            <p class="description" style="font-size:16px;">Upload an image and i will tell to you who is is the picture.</p>
+            <div class="form-item">
+                <label for="input-file">Image</label>
+                <input type="file" name="file" id="recognize-input-file" accept="image/*"/>
+            </div>
+
+            <div class="form-action">
+                <button type="submit">Recognize it</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+<!-- <div style="position:  width: 600px; height: 800px;">
+
+    <div style="position: absolute; bottom: 5px;">
+   <b>@NIKUNJ MAHAJAN</b>
+    </div> -->
+</body>
+</html>
